@@ -358,102 +358,6 @@ import {
             <div>
                 <Line client:load/>
             </div>
-            <div class="flex mt-8">
-                <div>
-                    <Line client:load icon={faDatabase} isLast/>
-                </div>
-                <div class="padding">
-                    <p data-aos="fade-right" class="text-title-large">Base de données</p>
-                </div>
-            </div>
-            <div class="flex flex-wrap gap-y-8 gap-x-12 mt-16 items-start">
-                <div data-aos="zoom-in"
-                     class=" sm:mt-[42px] platform bg-tertiary-container/70 text-on-tertiary-container">
-                    <Icon className="h-16 w-16" icon={faVectorPolygon}/>
-                    <p>PG Vector</p>
-                </div>
-                <div class="sm:flex-2 w-full md:w-fit">
-                    <div class="flex gap-4 items-center">
-                        <Diviser className="hidden md:block border-primary-container"/>
-                        <p class="text-title-medium text-on-primary-container">NoSQL</p>
-                        <Diviser className="hidden md:block border-primary-container"/>
-                    </div>
-                    <div class="flex gap-4 mt-4">
-                        <Diviser orientation="vertical" className="md:hidden border-primary-container"/>
-                        <div class="flex flex-1 flex-wrap gap-8">
-                            <div data-aos="zoom-in" data-aos-delay={150}
-                                 class="flex-1 platform bg-primary-container text-on-primary-container">
-                                <Image className="h-16 w-16" src={mongoLogo} alt="logo de mongoDB"/>
-                                <p>MongoDB</p>
-                            </div>
-                            <div data-aos="zoom-in" data-aos-delay={150}
-                                 class="flex-1 platform bg-primary-container text-on-primary-container">
-                                <Image className="h-16 w-16" src={dynamodbLogo} alt="logo de dynamoDB"/>
-                                <p>DynamoDB</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="flex-[3] w-full md:w-fit">
-                    <div class="flex gap-4 items-center">
-                        <Diviser className="hidden md:block border-secondary-container"/>
-                        <p class="text-title-medium text-on-secondary-container">SQL</p>
-                        <Diviser className="hidden md:block border-secondary-container"/>
-                    </div>
-                    <div class="flex gap-4 mt-4">
-                        <Diviser orientation="vertical" className="md:hidden border-secondary-container"/>
-                        <div class="grid grid-cols-4 grid-rows-3 gap-8">
-                            <div data-aos="zoom-in" data-aos-delay={300}
-                                 class="platform bg-secondary-container text-on-secondary-container">
-                                <Image className="h-16 w-16" src={postgresLogo} alt="logo de PostgreSQL"/>
-                                <p>Postgres</p>
-                            </div>
-                            <div data-aos="zoom-in" data-aos-delay={300}
-                                 class="platform bg-secondary-container text-on-secondary-container">
-                                <Image className="h-16 w-16" sName="h-10" src={mysqlLogo} alt="logo de mySQL"/>
-                                <p>MySQL</p>
-                            </div>
-                            <div data-aos="zoom-in" data-aos-delay={300}
-                                 class="platform bg-secondary-container text-on-secondary-container">
-                                <Image className="h-16 w-16" src={sqlServerLogo} alt="logo de sql serveur"/>
-                                <p class="text-clip whitespace-nowrap">SQL Server</p>
-                            </div>
-                            <div data-aos="zoom-in" data-aos-delay={300}
-                                 class="platform bg-secondary-container text-on-secondary-container">
-                                <Image className="h-16 w-16" src={sqlightLogo} alt="logo de sqlight"/>
-                                <p>SQLight</p>
-                            </div>
-                            <div data-aos="zoom-in" data-aos-delay={300}
-                                 class="platform bg-secondary-container text-on-secondary-container">
-                                <Image className="h-16 w-16" src={mariadbLogo} alt="logo de mariadb"/>
-                                <p>MariaDB</p>
-                            </div>
-                            <div data-aos="zoom-in" data-aos-delay={300}
-                                 class="platform bg-secondary-container text-on-secondary-container">
-                                <Image className="h-16 w-16" src={cockroachdbLogo} alt="logo de cockroachdb"/>
-                                <p>CockroachDB</p>
-                            </div>
-                            <div data-aos="zoom-in" data-aos-delay={300}
-                                 class="platform bg-secondary-container text-on-secondary-container">
-                                <Image className="h-16 w-16" src={planetscaleLogo} alt="logo de planetscale"/>
-                                <p>PlanetScale</p>
-                            </div>
-                        </>
-                    </div>
-                </div>
-                <style is:global>
-                    .platform {
-                        @apply py-4 px-8 rounded-lg flex flex-col items-center gap-4
-                    }
-                </style>
-            </div>
-
-        </div>
-        <div class="flex h-52">
-            <div>
-                <Line client:load/>
-            </div>
         </div>
     </section>
     <section class="theme-purple pt-8">
@@ -480,10 +384,6 @@ import {
                                 travail.</p>
 
                         </div>
-                        <!--<div class="right">-->
-                        <!--    <Image class="rounded-xl" src={layoutResponsive}-->
-                        <!--           alt="Illustration d'écran responsive"></Image>-->
-                        <!--</div>-->
                     </div>
                     <div class="flex flex-wrap gap-y-8 gap-x-12 mt-16 items-start">
                         <div data-aos="zoom-in"
