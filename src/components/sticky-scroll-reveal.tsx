@@ -16,7 +16,7 @@ const content: { text: React.ReactNode; media: React.ReactNode, theme?: string }
             </>),
         media: (
             <video className={"h-full w-full object-cover"} autoPlay loop muted>
-                <source src="/video/my_compressed_video.mp4" type="video/mp4"/>
+                <source src="/video/ai.mp4" type="video/mp4"/>
                 Sorry, your browser doesn't support embedded videos.
             </video>
         ),
@@ -31,7 +31,10 @@ const content: { text: React.ReactNode; media: React.ReactNode, theme?: string }
                 </p>
             </>),
         media: (
-            <img className={"h-full w-full object-cover"} loading={"lazy"} src={'/images/material-theme.webp'}/>
+            <video className={"h-full w-full object-cover"} autoPlay loop muted>
+                <source src="/video/bot.mp4" type="video/mp4"/>
+                Sorry, your browser doesn't support embedded videos.
+            </video>
         ),
         theme: "purple"
     },
@@ -45,7 +48,10 @@ const content: { text: React.ReactNode; media: React.ReactNode, theme?: string }
                 </p>
             </>),
         media: (
-            <img className={"h-full w-full object-cover"} loading={"lazy"} src={'/images/material-theme.webp'}/>
+            <video className={"h-full w-full object-cover"} autoPlay loop muted>
+                <source src="/video/rag.mp4" type="video/mp4"/>
+                Sorry, your browser doesn't support embedded videos.
+            </video>
         ),
         theme: "orange"
     },
