@@ -9,11 +9,9 @@ const content: { text: React.ReactNode; media: React.ReactNode, theme?: string }
     {
         text: (
             <>
-                <h3 className="text-headline-small text-primary">Conception visuelle moderne et fluide</h3>
-                <p className="lg:mt-6 mt-2 text-body-large">Grâce aux guidelines de Material Design 3, je conçois des
-                    interfaces fluides et adaptées à tous les écrans, assurant une navigation optimale et une
-                    esthétique
-                    harmonieuse.
+                <h3 className="text-headline-small text-primary">Spécialisez des models d'IA generative de text</h3>
+                <p className="lg:mt-6 mt-2 text-body-large">Grâce aux RAG de LLM, je conçois des
+                    chatbot spécialiser dans le ou les domaine(s) dont vous avez besoin.
                 </p>
             </>),
         media: (
@@ -26,12 +24,11 @@ const content: { text: React.ReactNode; media: React.ReactNode, theme?: string }
     {
         text: (
             <>
-                <h3 className="text-headline-small text-primary">Harmonisation des couleurs pour une identité visuelle
-                    forte</h3>
-                <p className="lg:mt-6 mt-2 text-body-large">Personnalisez facilement vos applications avec des palettes
-                    de
-                    couleurs cohérentes et dynamiques, inspirées par Material Design pour optimiser la lisibilité et
-                    l'attrait visuel de votre site.</p>
+                <h3 className="text-headline-small text-primary">Documentez vos solutions grace à l'IA</h3>
+                <p className="lg:mt-6 mt-2 text-body-large">Permettez à vos clients ou à votre équipe de trouver
+                    les solutions possible pour des problèmes precis.
+                    Rendez votre documentation plus rapide et efficace pour vos utilisateur.
+                </p>
             </>),
         media: (
             <img className={"h-full w-full object-cover"} loading={"lazy"} src={'/images/material-theme.webp'}/>
@@ -41,13 +38,10 @@ const content: { text: React.ReactNode; media: React.ReactNode, theme?: string }
     {
         text: (
             <>
-                <h3 className="text-headline-small text-primary">Dynamisez votre site avec des animations fluides</h3>
+                <h3 className="text-headline-small text-primary">Devenez un expert dans le domaine de votre choix</h3>
                 <p className="lg:mt-6 mt-2 text-body-large">
-                    À l'aide de <Link href={"https://www.framer.com/motion/"} target={"_blank"}>Framer motion</Link>, je
-                    conçois des
-                    animations
-                    fluides et engageantes qui
-                    enrichissent l'expérience utilisateur et donnent vie à votre site.
+                    Augmentez les connaissances d'un model sur certains sujets pour vous instruire a ces propos.
+                    Devenez un professionnelle, ou développez votre savoir dans n'importe quelle discipline.
                 </p>
             </>),
         media: (

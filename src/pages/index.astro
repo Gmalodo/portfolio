@@ -10,11 +10,26 @@ import home1Stars from "@assets/images/home-1-stars.svg";
 import {Image} from "astro:assets";
 import {StickyScroll} from "@components/sticky-scroll-reveal";
 import '@dotlottie/react-player/dist/index.css';
-import astroLogo from "@assets/images/astro-logo.svg?raw"
-import reactLogo from "@assets/images/react-logo.svg?raw"
+import microserviceLogo from "@assets/images/microservice-logo.svg?raw"
+import databaseLogo from "@assets/images/database-logo.svg?raw"
 import nestLogo from "@assets/images/nest-logo.svg?raw"
 import expressLogo from "@assets/images/express-logo.svg?raw"
+import restApiLogo from "@assets/images/rest-api-logo.svg?raw"
+import graphqlLogo from "@assets/images/graphql-logo.svg?raw"
 import tsLogo from "@assets/images/ts-logo.svg?raw"
+import grpcLogo from "@assets/images/grpc-logo.svg?raw"
+import rabbitmqLogo from "@assets/images/rabbitmq-logo.svg?raw"
+import websocketLogo from "@assets/images/websocket-logo.svg?raw"
+import dynamodbLogo from "@assets/images/dynamodb-logo.svg"
+import mongoLogo from "@assets/images/mongodb-logo.svg"
+import mysqlLogo from "@assets/images/mysql-logo.svg"
+import sqlServerLogo from "@assets/images/sql-server-logo.svg"
+import postgresLogo from "@assets/images/postgres-logo.svg"
+import sqlightLogo from "../assets/images/sqlite-logo.svg"
+import mariadbLogo from "../assets/images/mariadb-logo.svg"
+import cockroachdbLogo from "../assets/images/cockroachdb-logo.svg"
+import planetscaleLogo from "../assets/images/planetscale-logo.svg"
+
 import {Link} from "@components/Link"
 import angularLogo from "@assets/images/angular-logo.svg?raw"
 import materialLogo from "@assets/images/material-design-logo.svg?raw"
@@ -22,18 +37,18 @@ import framerMotionLogo from "@assets/images/framer-motion-logo.svg?raw"
 import sassLogo from "@assets/images/sass-logo.svg?raw"
 import layoutResponsive from "@assets/images/Responsive-pana.svg"
 import flutterLogo from "@assets/images/flutter-logo.svg?raw"
-import tailwindLogo from "@assets/images/tailwind-logo.svg?raw"
+import awsLogo from "@assets/images/aws-logo.svg?raw"
 import baseLogo from "@assets/images/base-logo.svg?raw"
 import portrait from "@assets/images/portrait.jpg"
 import {BackgroundColor} from "@components/BackgroundColor";
 import {Icon} from "@udixio/ui"
 import {Card} from "@udixio/ui"
 import {
-    faAddressCard, faChartNetwork,
+    faAddressCard, faBrainCircuit, faChartNetwork,
     faCircle, faCloud,
-    faCode, faCodeBranch, faGears,
-    faLaptopMobile,
-    faMessageMiddle, faProjectDiagram
+    faCode, faCodeBranch, faDatabase, faFileVector, faGears,
+    faLaptopMobile, faMagic,
+    faMessageMiddle, faProjectDiagram, faVectorPolygon, faVectorSquare
 } from "@fortawesome/pro-light-svg-icons";
 import {Techno} from "@components/Techno"
 import TextRevealByWord from "../components/TextReveal";
@@ -61,7 +76,7 @@ import {LinearGradient} from "@components/LinearGradient";
                 <div class="padding !pb-16">
                     <Image class="rounded-xl" src={portrait} height={64} width={64} alt="Joël"></Image>
                     <h1 class="text-headline-large my-6">
-                        Joël VIGREUX
+                        Rémi Faucon
                     </h1>
                     <div class="flex flex-wrap gap-4">
                         <div class="px-4 w-fit py-1.5 border border-outline-variant rounded-lg"><p
@@ -92,25 +107,15 @@ import {LinearGradient} from "@components/LinearGradient";
                 <div class="padding">
                     <h2 class="text-title-medium  mb-4 text-tertiary ">À propos de moi</h2>
                     <p class="text-body-large max-w-3xl ">
-                        Bonjour, je suis Joël Vigreux - un développeur passionné.<br/> Ayant découvert un vif intérêt
-                        pour
-                        le
-                        <Link href="#back-end">back-end</Link>
-                        en
-                        débutant ma carrière, je me suis ensuite laissé porter par l'univers fascinant du
-                        <Link href="#front-end">front-end</Link>
-                        et de <span class="text-nowrap">l'
-            <Link
-                    href="#experience-utilisateur">expérience&nbsp;utilisateur</Link></span>
-                        tout en intégrant des pratiques
-                        <Link
-                                href="#ecoresponsabilite">écoresponsables
-                        </Link>
-                        de manière pragmatique.
+                        Salut, moi c'est Rémi - un développeur passionné.<br/> Ayant un vif intérêt pour le
+                        développement backend, j'ai toute fois navigué à travers un certain nombre d'aspects de
+                        l'informatique; du DevOps au RAG de LLM en passant par la création de CLI en langage de bas
+                        niveau… mes maîtres mots restent robustesse et scalabilité
+
                     </p>
                     <div class="mt-8 flex gap-4">
                         <Button href="#contact" icon={faEnvelope} label="Me contacter"/>
-                        <Button href="#front-end" icon={faCircleInfo} variant="outlined"
+                        <Button href="#back-end" icon={faCircleInfo} variant="outlined"
                                 label="En savoir plus"/>
                     </div>
                 </div>
@@ -118,7 +123,7 @@ import {LinearGradient} from "@components/LinearGradient";
         </div>
         <LinearGradient nextTheme="purple"/>
     </section>
-    <section id="front-end" class="pt-8 theme-purple">
+    <section id="back-end" class="pt-8 theme-purple">
         <BackgroundColor canEscape={false} count={5} radius={800} className="opacity-100" client:load/>
         <div class="max-width ">
             <div class="flex">
@@ -126,179 +131,371 @@ import {LinearGradient} from "@components/LinearGradient";
                     <Line client:load icon={faCode} isLast/>
                 </div>
                 <div class="padding ">
-                    <p data-aos="fade-right" class="text-title-large">Développement web - Front-end</p>
+                    <p data-aos="fade-right" class="text-title-large">Développement - Back-end</p>
                     <div data-aos="fade-right" data-aos-delay="100" class="mt-4 text-display-medium max-w-prose">
                         <h2 class="text-gradient">Performance et flexibilité garantie</h2>
-                        <h3>J'assure vos projets avec des technologies modernes et adaptables</h3>
+                        <h3>J'assure vos projets avec des solutions modernes et adaptables</h3>
                     </div>
                 </div>
             </div>
             <div class="padding-x grid grid-cols-1 -mx-2 md:grid-cols-3 lg:grid-cols-3 gap-x-6 gap-y-4">
                 <Card data-aos="zoom-in" variant="filled"
                       className="group">
-                    <Techno variant="primary" className="p-6 pb-10" image={astroLogo}
-                            name="Astro"
-                    ><p>Optimise la création de sites web rapides en permettant l'intégration de divers frameworks et en
-                        générant du contenu statique ultra-performant.</p>
+                    <Techno variant="primary" className="p-6 pb-10" image={microserviceLogo}
+                            name="Micro-services"
+                    ><p>permet une évolutivité accrue, une réduction du temps de développement, une facilité de
+                        déploiement et une résilience accrue des applications. Les microservices favorisent également
+                        la flexibilité des mises à jour et des déploiements.</p>
                     </Techno>
                 </Card>
                 <Card data-aos="zoom-in" data-aos-delay={150} variant="filled"
                       className="group">
-                    <Techno variant="primary" className="p-6 pb-10" image={reactLogo}
-                            name="React"
-                    ><p>Facilite la création d'interfaces interactives avec des composants réutilisables, accélérant le
-                        développement et la gestion de l'état.</p>
+                    <Techno variant="primary" className="p-6 pb-10" image={databaseLogo}
+                            name="SQL/NoSQL"
+                    ><p>choisir la technologie de base de données la plus appropriée pour chaque projet, en fonction des
+                        besoins spécifiques en matière de structure, de scalabilité, de performance et de flexibilité</p>
                     </Techno>
                 </Card>
                 <Card data-aos="zoom-in" data-aos-delay={300} variant="filled"
                       className="group">
-                    <Techno variant="primary" className="p-6 pb-10" image={tailwindLogo}
-                            name="Tailwind"
-                    ><p>Permet de créer des designs personnalisés rapidement avec des classes utilitaires, rendant le
-                        style des composants flexible et modulaire.</p>
+                    <Techno variant="primary" className="p-6 pb-10" image={awsLogo}
+                            name="AWS"
+                    ><p>Déployez en toute confiance vos application sur le cloud pour une meilleur disponibilité, en
+                        utilisant les innombrables services de ce cloud publique soyez confiant de l'efficacité de vos solutions</p>
                     </Techno>
                 </Card>
-                <Card data-aos="zoom-in" data-aos-delay={450} className="md:col-span-3 p-6 pb-10 mb-px mt-4">
-                    <p class="mb-8 mt-2">Ma boîte à outils :</p>
-                    <div class=" grid md:grid-cols-2 gap-x-4 gap-y-6">
-                        <Techno image={framerMotionLogo} name="Framer Motion"
-                        ><p>Rend les animations web simples et fluides, ajoutant du dynamisme à vos interfaces avec
-                            facilité.</p>
-                        </Techno>
-                        <Techno image={materialLogo} name="Material 3"
-                        ><p>Apporte des designs modernes et élégants, offrant des interfaces cohérentes et intuitives
-                            avec des éléments visuels raffinés.</p>
-                        </Techno>
-                        <Techno image={angularLogo} name="Angular"
-                        ><p>Facilite le développement d'applications web robustes et évolutives avec une structure
-                            organisée et des fonctionnalités puissantes intégrées.</p>
-                        </Techno>
-                        <Techno image={sassLogo} name="Sass"
-                        ><p>Simplifie le CSS avec des variables et des fonctions, facilitant la gestion des styles
-                            complexes.</p>
-                        </Techno>
-                        <Techno image={tsLogo} name="Typescript"
-                        ><p>Améliore le JavaScript avec des types, rendant le code plus sûr et plus facile à
-                            maintenir.</p>
-                        </Techno>
 
-                        <Techno image={baseLogo} name="Les bases (HTML, CSS et JavaScript)"
-                        ><p>Fondations essentielles pour créer des sites web interactifs et fonctionnels.</p>
-                        </Techno>
-                    </div>
-                </Card>
+                <!--<Card data-aos="zoom-in" data-aos-delay={450} className="md:col-span-3 p-6 pb-10 mb-px mt-4">-->
+                <!--    <p class="mb-8 mt-2">Ma boîte à outils :</p>-->
+                <!--    <div class=" grid md:grid-cols-2 gap-x-4 gap-y-6">-->
+                <!--        <Techno image={framerMotionLogo} name="Framer Motion"-->
+                <!--        ><p>Rend les animations web simples et fluides, ajoutant du dynamisme à vos interfaces avec-->
+                <!--            facilité.</p>-->
+                <!--        </Techno>-->
+                <!--        <Techno image={materialLogo} name="Material 3"-->
+                <!--        ><p>Apporte des designs modernes et élégants, offrant des interfaces cohérentes et intuitives-->
+                <!--            avec des éléments visuels raffinés.</p>-->
+                <!--        </Techno>-->
+                <!--        <Techno image={angularLogo} name="Angular"-->
+                <!--        ><p>Facilite le développement d'applications web robustes et évolutives avec une structure-->
+                <!--            organisée et des fonctionnalités puissantes intégrées.</p>-->
+                <!--        </Techno>-->
+                <!--        <Techno image={sassLogo} name="Sass"-->
+                <!--        ><p>Simplifie le CSS avec des variables et des fonctions, facilitant la gestion des styles-->
+                <!--            complexes.</p>-->
+                <!--        </Techno>-->
+                <!--        <Techno image={tsLogo} name="Typescript"-->
+                <!--        ><p>Améliore le JavaScript avec des types, rendant le code plus sûr et plus facile à-->
+                <!--            maintenir.</p>-->
+                <!--        </Techno>-->
+
+                <!--        <Techno image={baseLogo} name="Les bases (HTML, CSS et JavaScript)"-->
+                <!--        ><p>Fondations essentielles pour créer des sites web interactifs et fonctionnels.</p>-->
+                <!--        </Techno>-->
+                <!--    </div>-->
+                <!--</Card>-->
             </div>
-            <div class="flex h-52">
+            <div class="flex h-24">
                 <div>
                     <Line client:load/>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="theme-purple pt-8">
-        <div class="max-width">
-            <div class="flex">
+            <div class="flex mt-8">
                 <div>
-                    <Line client:load nextTheme="blue" icon={faLaptopMobile}/>
+                    <Line isLast client:load icon={faGears}/>
                 </div>
                 <div class="padding">
-                    <div class="flex items-center md:flex-row flex-col">
-                        <div class="left">
-                            <p data-aos="fade-right" class="text-title-large">Développement multiplateforme</p>
-                            <div data-aos="fade-right" data-aos-delay="100"
-                                 class="mt-4 text-display-medium max-w-prose">
-                                <h2 class="text-gradient">Touchez un public plus large</h2>
-                                <h3>Je convertis vos idées en applications adaptables à tous les
-                                    appareils</h3>
-                            </div>
-                            <p data-aos="fade-right" data-aos-delay="100" class="max-w-prose mt-8 text-body-large">
-                                Flutter me permet de créer des applications pour
-                                mobiles, web, bureau et intégrés à partir d'une seule base de code. J'apprécie
-                                particulièrement
-                                son efficacité dans le développement multiplateforme, ce qui facilite grandement mon
-                                travail.</p>
-
-                        </div>
-                        <!--<div class="right">-->
-                        <!--    <Image class="rounded-xl" src={layoutResponsive}-->
-                        <!--           alt="Illustration d'écran responsive"></Image>-->
-                        <!--</div>-->
-                    </div>
-                    <div class="flex flex-wrap gap-y-8 gap-x-12 mt-16 items-start">
-                        <div data-aos="zoom-in"
-                             class=" sm:mt-[42px] platform bg-tertiary-container/70 text-on-tertiary-container">
-                            <Icon className="h-16 w-16" icon={faBrowser}/>
-                            <p>Web</p>
-                        </div>
-                        <div class="sm:flex-2 w-full md:w-fit">
-                            <div class="flex gap-4 items-center">
-                                <Diviser className="hidden md:block border-primary-container"/>
-                                <p class="text-title-medium text-on-primary-container">Mobile</p>
-                                <Diviser className="hidden md:block border-primary-container"/>
-                            </div>
-                            <div class="flex gap-4 mt-4">
-                                <Diviser orientation="vertical" className="md:hidden border-primary-container"/>
-                                <div class="flex flex-1 flex-wrap gap-8">
-                                    <div data-aos="zoom-in" data-aos-delay={150}
-                                         class="flex-1 platform bg-primary-container text-on-primary-container">
-                                        <Icon className="h-16 w-16" icon={faApple}/>
-                                        <p>IOS</p>
-                                    </div>
-                                    <div data-aos="zoom-in" data-aos-delay={150}
-                                         class="flex-1 platform bg-primary-container text-on-primary-container">
-                                        <Icon className="h-16 w-16" icon={faAndroid}/>
-                                        <p>Android</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="flex-[3] w-full md:w-fit">
-                            <div class="flex gap-4 items-center">
-                                <Diviser className="hidden md:block border-secondary-container"/>
-                                <p class="text-title-medium text-on-secondary-container">Desktop</p>
-                                <Diviser className="hidden md:block border-secondary-container"/>
-                            </div>
-                            <div class="flex gap-4 mt-4">
-                                <Diviser orientation="vertical" className="md:hidden border-secondary-container"/>
-                                <div class="flex flex-1 flex-wrap gap-8">
-                                    <div data-aos="zoom-in" data-aos-delay={300}
-                                         class="flex-[100%] lg:flex-1 platform bg-secondary-container text-on-secondary-container">
-                                        <Icon className="h-16 w-16" icon={faWindows}/>
-                                        <p>Windows</p>
-                                    </div>
-                                    <div data-aos="zoom-in" data-aos-delay={300}
-                                         class="flex-1 platform bg-secondary-container text-on-secondary-container">
-                                        <Icon className="h-16 w-16" sName="h-10" icon={faApple}/>
-                                        <p>MacOs</p>
-                                    </div>
-                                    <div data-aos="zoom-in" data-aos-delay={300}
-                                         class="flex-1 platform bg-secondary-container text-on-secondary-container">
-                                        <Icon className="h-16 w-16" icon={faLinux}/>
-                                        <p>Linux</p>
-                                    </div>
-                                </>
-                            </div>
-                        </div>
-                        <style is:global>
-                            .platform {
-                                @apply py-4 px-8 rounded-lg flex flex-col items-center gap-4
-                            }
-                        </style>
+                    <p data-aos="fade-right" class="text-title-large">Languages & Frameworks</p>
+                    <div data-aos="fade-right" data-aos-delay="100" class="mt-4 text-display-medium max-w-prose">
+                        <h2 class="text-gradient">Chaque défi a sa solution</h2>
+                        <h3>Ma maîtrise de divers langages et technologies m'aide à relever une large gamme de défis</h3>
                     </div>
                 </div>
             </div>
+            <div class="grid padding-x mt-4 lg:grid-cols-5 md:grid-cols-2 grid-cols-1 gap-4">
+                <Card data-aos="zoom-in" variant="filled" className="lg:col-span-3 md:col-span-2 lg:row-span-2 p-6">
+                    <Techno buttonLabel="En voir plus" variant="primary" className=""
+                            image={nestLogo}
+                            name="Nest.Js"
+                    >
+                        <p>Offre une structure modulaire et un support TypeScript pour créer des applications back-end
+                            robustes et évolutives.</p>
+                    </Techno>
+                    <p class="mt-8 text-label-large">Maîtriser NestJS implique également l'utilisation de :</p>
+                    <div class="mt-4 flex flex-col gap-4">
+                        <Techno image={expressLogo} name="Express.Js">
+                            <p>Simplifie la création d'applications web avec une API légère et flexible pour le routage
+                                et la gestion des requêtes.</p>
+                        </Techno>
+                        <Techno icon={faNodeJs} name="Node.Js">
+                            <p>Permet d'exécuter JavaScript côté serveur pour créer des applications rapides et
+                                évolutives avec un accès aux ressources système.</p>
+                        </Techno>
+                        <Techno image={tsLogo} name="Typescript">
+                            <p>Renforce JavaScript avec des types statiques pour un code plus sûr, clair et facile à
+                                maintenir.</p>
+                        </Techno>
+                    </div>
+                </Card>
+                <Card data-aos="zoom-in" data-aos-delay={150} className="lg:col-span-2 row-span-1" variant="filled">
+                    <Techno variant="primary" className="p-6" icon={faGolang}
+                            name="Go"
+                    ><p>Offre une performance élevée et une gestion efficace de la concurrence, idéal pour des
+                        applications rapides et pour des systèmes variés grâce à sa compilation en binaire.</p>
+                    </Techno>
+                </Card>
+                <Card data-aos="zoom-in" data-aos-delay={150} className="lg:col-span-2 row-span-1" variant="filled">
+                    <Techno variant="primary" className="p-6" icon={faPython}
+                            name="Python">
+                        <p>Offre une syntaxe claire et simple pour développer rapidement des applications
+                            puissantes,
+                            idéal pour l'analyse de données, l'intelligence artificielle et le développement
+                            web.</p>
+                    </Techno>
+                </Card>
+                <Card data-aos="zoom-in" data-aos-delay={450} className="col-span-1 row-span-1" variant="filled">
+                    <Techno variant="primary" className="p-6" image={restApiLogo}
+                            name="API REST">
+                        <p>L'API REST utilise des méthodes HTTP pour interagir avec des ressources sur le web,
+                            facilitant la communication entre les clients et les serveurs.</p>
+                    </Techno>
+                </Card>
+                <Card data-aos="zoom-in" data-aos-delay={450} className="col-span-1 row-span-1" variant="filled">
+                    <Techno variant="primary" className="p-6" image={graphqlLogo}
+                            name="API GraphQL">
+                        <p>L'API GraphQL permet aux clients de demander
+                            exactement les données dont ils ont besoin, réduisant ainsi la quantité de données transmises.</p>
+                    </Techno>
+                </Card>
+                <Card data-aos="zoom-in" data-aos-delay={450} className="col-span-1 row-span-1" variant="filled">
+                    <Techno variant="primary" className="p-6" image={grpcLogo}
+                            name="gRPC">
+                        <p>gRPC utilise le protocole HTTP/2 et des messages de type Protocol Buffers pour offrir une
+                            communication rapide et efficace entre les services</p>
+                    </Techno>
+                </Card>
+                <Card data-aos="zoom-in" data-aos-delay={450} className="col-span-1 row-span-1" variant="filled">
+                    <Techno variant="primary" className="p-6" image={rabbitmqLogo}
+                            name="RabbitMQ & SQS">
+                        <p>RabbitMQ et SQS sont des systèmes de messagerie asynchrone qui permettent de traiter des
+                            messages en arrière-plan, améliorant la scalabilité et la fiabilité des applications.</p>
+                    </Techno>
+                </Card>
+                <Card data-aos="zoom-in" data-aos-delay={450} className="col-span-1 row-span-1" variant="filled">
+                    <Techno variant="primary" className="p-6" image={websocketLogo}
+                            name="WebSocket">
+                        <p>WebSocket est un protocole de communication bidirectionnelle en temps réel entre un client
+                            web et un serveur.</p>
+                    </Techno>
+                </Card>
+            </div>
+            <div class="flex h-24">
+                <div>
+                    <Line client:load/>
+                </div>
+            </div>
+            <div class="flex mt-8">
+                <div>
+                    <Line client:load icon={faDatabase} isLast/>
+                </div>
+                <div class="padding">
+                    <p data-aos="fade-right" class="text-title-large">Base de données</p>
+                </div>
+            </div>
+            <div class="flex flex-wrap gap-y-8 gap-x-12 mt-16 items-start">
+                <div data-aos="zoom-in"
+                     class=" sm:mt-[42px] platform bg-tertiary-container/70 text-on-tertiary-container">
+                    <Icon className="h-16 w-16" icon={faVectorPolygon}/>
+                    <p>PG Vector</p>
+                </div>
+                <div class="sm:flex-2 w-full md:w-fit">
+                    <div class="flex gap-4 items-center">
+                        <Diviser className="hidden md:block border-primary-container"/>
+                        <p class="text-title-medium text-on-primary-container">NoSQL</p>
+                        <Diviser className="hidden md:block border-primary-container"/>
+                    </div>
+                    <div class="flex gap-4 mt-4">
+                        <Diviser orientation="vertical" className="md:hidden border-primary-container"/>
+                        <div class="flex flex-1 flex-wrap gap-8">
+                            <div data-aos="zoom-in" data-aos-delay={150}
+                                 class="flex-1 platform bg-primary-container text-on-primary-container">
+                                <Image className="h-16 w-16" src={mongoLogo} alt="logo de mongoDB"/>
+                                <p>MongoDB</p>
+                            </div>
+                            <div data-aos="zoom-in" data-aos-delay={150}
+                                 class="flex-1 platform bg-primary-container text-on-primary-container">
+                                <Image className="h-16 w-16" src={dynamodbLogo} alt="logo de dynamoDB"/>
+                                <p>DynamoDB</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="flex-[3] w-full md:w-fit">
+                    <div class="flex gap-4 items-center">
+                        <Diviser className="hidden md:block border-secondary-container"/>
+                        <p class="text-title-medium text-on-secondary-container">SQL</p>
+                        <Diviser className="hidden md:block border-secondary-container"/>
+                    </div>
+                    <div class="flex gap-4 mt-4">
+                        <Diviser orientation="vertical" className="md:hidden border-secondary-container"/>
+                        <div class="grid grid-cols-4 grid-rows-3 gap-8">
+                            <div data-aos="zoom-in" data-aos-delay={300}
+                                 class="platform bg-secondary-container text-on-secondary-container">
+                                <Image className="h-16 w-16" src={postgresLogo} alt="logo de PostgreSQL"/>
+                                <p>Postgres</p>
+                            </div>
+                            <div data-aos="zoom-in" data-aos-delay={300}
+                                 class="platform bg-secondary-container text-on-secondary-container">
+                                <Image className="h-16 w-16" sName="h-10" src={mysqlLogo} alt="logo de mySQL"/>
+                                <p>MySQL</p>
+                            </div>
+                            <div data-aos="zoom-in" data-aos-delay={300}
+                                 class="platform bg-secondary-container text-on-secondary-container">
+                                <Image className="h-16 w-16" src={sqlServerLogo} alt="logo de sql serveur"/>
+                                <p class="text-clip whitespace-nowrap">SQL Server</p>
+                            </div>
+                            <div data-aos="zoom-in" data-aos-delay={300}
+                                 class="platform bg-secondary-container text-on-secondary-container">
+                                <Image className="h-16 w-16" src={sqlightLogo} alt="logo de sqlight"/>
+                                <p>SQLight</p>
+                            </div>
+                            <div data-aos="zoom-in" data-aos-delay={300}
+                                 class="platform bg-secondary-container text-on-secondary-container">
+                                <Image className="h-16 w-16" src={mariadbLogo} alt="logo de mariadb"/>
+                                <p>MariaDB</p>
+                            </div>
+                            <div data-aos="zoom-in" data-aos-delay={300}
+                                 class="platform bg-secondary-container text-on-secondary-container">
+                                <Image className="h-16 w-16" src={cockroachdbLogo} alt="logo de cockroachdb"/>
+                                <p>CockroachDB</p>
+                            </div>
+                            <div data-aos="zoom-in" data-aos-delay={300}
+                                 class="platform bg-secondary-container text-on-secondary-container">
+                                <Image className="h-16 w-16" src={planetscaleLogo} alt="logo de planetscale"/>
+                                <p>PlanetScale</p>
+                            </div>
+                        </>
+                    </div>
+                </div>
+                <style is:global>
+                    .platform {
+                        @apply py-4 px-8 rounded-lg flex flex-col items-center gap-4
+                    }
+                </style>
+            </div>
+
         </div>
-        <LinearGradient nextTheme="blue"/>
+        <div class="flex h-52">
+            <div>
+                <Line client:load/>
+            </div>
+        </div>
     </section>
+    <!--<section class="theme-purple pt-8">-->
+    <!--    <div class="max-width">-->
+    <!--        <div class="flex">-->
+    <!--            <div>-->
+    <!--                <Line client:load nextTheme="blue" icon={faLaptopMobile}/>-->
+    <!--            </div>-->
+    <!--            <div class="padding">-->
+    <!--                <div class="flex items-center md:flex-row flex-col">-->
+    <!--                    <div class="left">-->
+    <!--                        <p data-aos="fade-right" class="text-title-large">Développement multiplateforme</p>-->
+    <!--                        <div data-aos="fade-right" data-aos-delay="100"-->
+    <!--                             class="mt-4 text-display-medium max-w-prose">-->
+    <!--                            <h2 class="text-gradient">Touchez un public plus large</h2>-->
+    <!--                            <h3>Je convertis vos idées en applications adaptables à tous les-->
+    <!--                                appareils</h3>-->
+    <!--                        </div>-->
+    <!--                        <p data-aos="fade-right" data-aos-delay="100" class="max-w-prose mt-8 text-body-large">-->
+    <!--                            Flutter me permet de créer des applications pour-->
+    <!--                            mobiles, web, bureau et intégrés à partir d'une seule base de code. J'apprécie-->
+    <!--                            particulièrement-->
+    <!--                            son efficacité dans le développement multiplateforme, ce qui facilite grandement mon-->
+    <!--                            travail.</p>-->
+
+    <!--                    </div>-->
+    <!--                    &lt;!&ndash;<div class="right">&ndash;&gt;-->
+    <!--                    &lt;!&ndash;    <Image class="rounded-xl" src={layoutResponsive}&ndash;&gt;-->
+    <!--                    &lt;!&ndash;           alt="Illustration d'écran responsive"></Image>&ndash;&gt;-->
+    <!--                    &lt;!&ndash;</div>&ndash;&gt;-->
+    <!--                </div>-->
+    <!--                <div class="flex flex-wrap gap-y-8 gap-x-12 mt-16 items-start">-->
+    <!--                    <div data-aos="zoom-in"-->
+    <!--                         class=" sm:mt-[42px] platform bg-tertiary-container/70 text-on-tertiary-container">-->
+    <!--                        <Icon className="h-16 w-16" icon={faBrowser}/>-->
+    <!--                        <p>Web</p>-->
+    <!--                    </div>-->
+    <!--                    <div class="sm:flex-2 w-full md:w-fit">-->
+    <!--                        <div class="flex gap-4 items-center">-->
+    <!--                            <Diviser className="hidden md:block border-primary-container"/>-->
+    <!--                            <p class="text-title-medium text-on-primary-container">Mobile</p>-->
+    <!--                            <Diviser className="hidden md:block border-primary-container"/>-->
+    <!--                        </div>-->
+    <!--                        <div class="flex gap-4 mt-4">-->
+    <!--                            <Diviser orientation="vertical" className="md:hidden border-primary-container"/>-->
+    <!--                            <div class="flex flex-1 flex-wrap gap-8">-->
+    <!--                                <div data-aos="zoom-in" data-aos-delay={150}-->
+    <!--                                     class="flex-1 platform bg-primary-container text-on-primary-container">-->
+    <!--                                    <Icon className="h-16 w-16" icon={faApple}/>-->
+    <!--                                    <p>IOS</p>-->
+    <!--                                </div>-->
+    <!--                                <div data-aos="zoom-in" data-aos-delay={150}-->
+    <!--                                     class="flex-1 platform bg-primary-container text-on-primary-container">-->
+    <!--                                    <Icon className="h-16 w-16" icon={faAndroid}/>-->
+    <!--                                    <p>Android</p>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+
+    <!--                    </div>-->
+    <!--                    <div class="flex-[3] w-full md:w-fit">-->
+    <!--                        <div class="flex gap-4 items-center">-->
+    <!--                            <Diviser className="hidden md:block border-secondary-container"/>-->
+    <!--                            <p class="text-title-medium text-on-secondary-container">Desktop</p>-->
+    <!--                            <Diviser className="hidden md:block border-secondary-container"/>-->
+    <!--                        </div>-->
+    <!--                        <div class="flex gap-4 mt-4">-->
+    <!--                            <Diviser orientation="vertical" className="md:hidden border-secondary-container"/>-->
+    <!--                            <div class="flex flex-1 flex-wrap gap-8">-->
+    <!--                                <div data-aos="zoom-in" data-aos-delay={300}-->
+    <!--                                     class="flex-[100%] lg:flex-1 platform bg-secondary-container text-on-secondary-container">-->
+    <!--                                    <Icon className="h-16 w-16" icon={faWindows}/>-->
+    <!--                                    <p>Windows</p>-->
+    <!--                                </div>-->
+    <!--                                <div data-aos="zoom-in" data-aos-delay={300}-->
+    <!--                                     class="flex-1 platform bg-secondary-container text-on-secondary-container">-->
+    <!--                                    <Icon className="h-16 w-16" sName="h-10" icon={faApple}/>-->
+    <!--                                    <p>MacOs</p>-->
+    <!--                                </div>-->
+    <!--                                <div data-aos="zoom-in" data-aos-delay={300}-->
+    <!--                                     class="flex-1 platform bg-secondary-container text-on-secondary-container">-->
+    <!--                                    <Icon className="h-16 w-16" icon={faLinux}/>-->
+    <!--                                    <p>Linux</p>-->
+    <!--                                </div>-->
+    <!--                            </>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                    <style is:global>-->
+    <!--                        .platform {-->
+    <!--                            @apply py-4 px-8 rounded-lg flex flex-col items-center gap-4-->
+    <!--                        }-->
+    <!--                    </style>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--    <LinearGradient nextTheme="blue"/>-->
+    <!--</section>-->
     <section class="theme-blue pt-8 !z-20">
         <div class="max-width">
             <div class="flex">
                 <div>
-                    <Line isLast client:load icon={faLaptopMobile}/>
+                    <Line isLast client:load icon={faBrainCircuit}/>
                 </div>
                 <div class="padding">
-                    <p data-aos="fade-right" class="text-title-large">Design</p>
+                    <p data-aos="fade-right" class="text-title-large">AI</p>
                     <div data-aos="fade-right" data-aos-delay="100" class="mt-4 text-display-medium max-w-prose">
                         <h2 class="text-gradient">Augmentez la fidélité de vos utilisateurs</h2>
                         <h3>Offrez une expérience utilisateur exceptionnelle avec mes services</h3>
@@ -309,7 +506,7 @@ import {LinearGradient} from "@components/LinearGradient";
         </div>
         <LinearGradient nextTheme="orange"/>
     </section>
-    <section id="back-end" class="pt-64  theme-orange">
+    <section id="front-end" class="pt-64  theme-orange">
         <div class="section">
             <p class="text-center text-title-medium text-tertiary">Back-end</p>
             <h2 class="text-center text-display-medium mt-2 mb-8 max-w-prose mx-auto">
