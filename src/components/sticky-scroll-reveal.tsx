@@ -53,6 +53,7 @@ const content: { text: React.ReactNode; media: React.ReactNode, theme?: string }
         ),
         theme: "orange"
     },
+]
 
 export const StickyScroll = () => {
   const [isLg, setIsLg] = useState(false);

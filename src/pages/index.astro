@@ -1,15 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Obfuscate from 'react-obfuscate';
-import {Button, Diviser} from "@udixio/ui"
-import home1 from "@assets/images/home-1.png";
-import home1Left from "@assets/images/home-1-left.png";
-import home1Middle from "@assets/images/home-1-middle.png";
-import home1Right from "@assets/images/home-1-right.png";
-import home1Stars from "@assets/images/home-1-stars.svg";
 import {TextField} from "@udixio/ui";
 import {Image} from "astro:assets";
 import {StickyScroll} from "@components/sticky-scroll-reveal";
+import {Button, Diviser} from "@udixio/ui"
+import {Line} from '@components/Line'
+import {LinearGradient} from "@components/LinearGradient";
+import {Techno} from "@components/Techno"
+import {Icon} from "@udixio/ui"
+import {Card} from "@udixio/ui"
+import {FormContact} from "@components/FormContact";
+import {BackgroundColor} from "@components/BackgroundColor";
+import {Link} from "@components/Link"
 import microserviceLogo from "@assets/images/microservice-logo.svg?raw"
 import databaseLogo from "@assets/images/database-logo.svg?raw"
 import nestLogo from "@assets/images/nest-logo.svg?raw"
@@ -29,33 +32,18 @@ import sqlightLogo from "../assets/images/sqlite-logo.svg"
 import mariadbLogo from "../assets/images/mariadb-logo.svg"
 import cockroachdbLogo from "../assets/images/cockroachdb-logo.svg"
 import planetscaleLogo from "../assets/images/planetscale-logo.svg"
-
-import {Link} from "@components/Link"
-import angularLogo from "@assets/images/angular-logo.svg?raw"
-import materialLogo from "@assets/images/material-design-logo.svg?raw"
-import framerMotionLogo from "@assets/images/framer-motion-logo.svg?raw"
-import sassLogo from "@assets/images/sass-logo.svg?raw"
-import layoutResponsive from "@assets/images/Responsive-pana.svg"
-import flutterLogo from "@assets/images/flutter-logo.svg?raw"
 import awsLogo from "@assets/images/aws-logo.svg?raw"
-import baseLogo from "@assets/images/base-logo.svg?raw"
 import portrait from "@assets/images/portrait.jpg"
-import {FormContact} from "@components/FormContact";
-import {BackgroundColor} from "@components/BackgroundColor";
-import {Icon} from "@udixio/ui"
-import {Card} from "@udixio/ui"
 import {
     faAddressCard, faBrainCircuit, faChartNetwork,
     faCircle, faCloud,
-    faCode, faCodeBranch, faDatabase, faFileVector, faGears,
-    faLaptopMobile, faMagic,
-    faMessageMiddle, faProjectDiagram, faVectorPolygon, faVectorSquare
-    faCode, faCodeBranch, faComments, faGears,
+    faCode, faDatabase, faGears,
+    faLaptopMobile, faMessageMiddle, faProjectDiagram, faVectorPolygon,
+    faComments, faGears,
     faLaptopMobile,
-    faMessageMiddle, faPhone, faProjectDiagram
+    faMessageMiddle, faProjectDiagram
 } from "@fortawesome/pro-light-svg-icons";
-import {Techno} from "@components/Techno"
-import {faBrowser, faCircleInfo, faEnvelope,} from "@fortawesome/pro-regular-svg-icons";
+import {faBrowser, faCircleInfo, faEnvelope} from "@fortawesome/pro-regular-svg-icons";
 import {
     faAndroid,
     faApple,
@@ -66,8 +54,6 @@ import {
     faPython, faSymfony,
     faWindows
 } from "@fortawesome/free-brands-svg-icons";
-import {Line} from '@components/Line'
-import {LinearGradient} from "@components/LinearGradient";
 ---
 <Layout seo={{
     title: `Joël Vigreux - Développeur full stack - Spécialiste Astro, React & NestJS`,
