@@ -2,114 +2,51 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import classNames from "classnames";
-import { Link } from "@components/Link.tsx";
 
-const content: {
-  text: React.ReactNode;
-  media: React.ReactNode;
-  theme?: string;
-}[] = [
-  {
-    text: (
-      <>
-        <h4 className="text-headline-small text-primary">
-          Conception visuelle moderne et fluide
-        </h4>
-        <p className="lg:mt-6 mt-2 text-body-large">
-          Grâce aux guidelines de Material Design 3, je conçois des interfaces
-          fluides et adaptées à tous les écrans, assurant une navigation
-          optimale et une esthétique harmonieuse.
-        </p>
-      </>
-    ),
-    media: (
-      <video
-        className={"md:h-[320px] h-[200px] lg:h-full w-full object-cover"}
-        autoPlay
-        loop
-        muted
-      >
-        <source src="/video/output.mp4" type="video/mp4" />
-        Sorry, your browser doesn't support embedded videos.
-      </video>
-    ),
-    theme: "purple",
-  },
-  {
-    text: (
-      <>
-        <h4 className="text-headline-small text-primary">
-          Harmonisation des couleurs pour une identité visuelle forte
-        </h4>
-        <p className="lg:mt-6 mt-2 text-body-large">
-          Personnalisez facilement vos applications avec des palettes de
-          couleurs cohérentes et dynamiques, inspirées par Material Design pour
-          optimiser la lisibilité et l'attrait visuel de votre site.
-        </p>
-      </>
-    ),
-    media: (
-      <img
-        className={"w-full md:h-[320px] h-[200px] lg:h-full object-cover"}
-        loading={"lazy"}
-        alt={"Illustration de layout"}
-        src={"/images/material-theme.webp"}
-      />
-    ),
-    theme: "blue",
-  },
-  {
-    text: (
-      <>
-        <h4 className="text-headline-small text-primary">
-          Dynamisez votre site avec des animations fluides
-        </h4>
-        <p className="lg:mt-6 mt-2 text-body-large">
-          À l'aide de{" "}
-          <Link href={"https://www.framer.com/motion/"} target={"_blank"}>
-            Framer motion
-          </Link>
-          , je conçois des animations fluides et engageantes qui enrichissent
-          l'expérience utilisateur et donnent vie à votre site.
-        </p>
-      </>
-    ),
-    media: (
-      <div
-        className={
-          "bg-primary/80 w-full md:h-[320px] h-[200px] lg:h-full flex items-center justify-center backdrop-blur"
-        }
-      >
-        <div className={"h-32 w-32 p-6 bg-surface-variant rounded-2xl"}>
-          <svg
-            className={" "}
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 100 100"
-          >
-            <motion.path
-              d="M0 100V0l50 50 50-50v100L75 75l-25 25-25-25z"
-              variants={{
-                hidden: {
-                  pathLength: 0,
-                  fill: "rgb(var(--colors-inverse-primary)/0)",
-                },
-                visible: {
-                  pathLength: 1,
-                  fill: "rgb(var(--colors-surface)/1)",
-                },
-              }}
-              className="stroke-2 stroke-surface"
-              initial="hidden"
-              animate="visible"
-              transition={{ repeat: Infinity, duration: 2, ease: "easeOut" }}
-            />
-          </svg>
-        </div>
-      </div>
-    ),
-    theme: "green",
-  },
-];
+const content: { text: React.ReactNode; media: React.ReactNode, theme?: string }[] = [
+    {
+        text: (
+            <>
+                <h3 className="text-headline-small text-primary">Spécialisez des models d'IA generative de text</h3>
+                <p className="lg:mt-6 mt-2 text-body-large">Grâce aux RAG de LLM, je conçois des
+                    chatbot spécialiser dans le ou les domaine(s) dont vous avez besoin.
+                </p>
+            </>),
+        media: (
+            <video className={"h-full w-full object-cover"} autoPlay loop muted>
+                <source src="/video/my_compressed_video.mp4" type="video/mp4"/>
+                Sorry, your browser doesn't support embedded videos.
+            </video>
+        ),
+    },
+    {
+        text: (
+            <>
+                <h3 className="text-headline-small text-primary">Documentez vos solutions grace à l'IA</h3>
+                <p className="lg:mt-6 mt-2 text-body-large">Permettez à vos clients ou à votre équipe de trouver
+                    les solutions possible pour des problèmes precis.
+                    Rendez votre documentation plus rapide et efficace pour vos utilisateur.
+                </p>
+            </>),
+        media: (
+            <img className={"h-full w-full object-cover"} loading={"lazy"} src={'/images/material-theme.webp'}/>
+        ),
+        theme: "purple"
+    },
+    {
+        text: (
+            <>
+                <h3 className="text-headline-small text-primary">Devenez un expert dans le domaine de votre choix</h3>
+                <p className="lg:mt-6 mt-2 text-body-large">
+                    Augmentez les connaissances d'un model sur certains sujets pour vous instruire a ces propos.
+                    Devenez un professionnelle, ou développez votre savoir dans n'importe quelle discipline.
+                </p>
+            </>),
+        media: (
+            <img className={"h-full w-full object-cover"} loading={"lazy"} src={'/images/material-theme.webp'}/>
+        ),
+        theme: "orange"
+    },
 
 export const StickyScroll = () => {
   const [isLg, setIsLg] = useState(false);
