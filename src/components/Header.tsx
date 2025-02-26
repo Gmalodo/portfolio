@@ -1,4 +1,4 @@
-import { faCommentSmile } from "@fortawesome/pro-light-svg-icons";
+import {faCommentSmile, faHome} from "@fortawesome/pro-light-svg-icons";
 import { Fab } from "@udixio/ui";
 import { useEffect, useRef, useState } from "react";
 import { Menu } from "@components/Menu.tsx";
@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 
 export const Header = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(true);
+  const [isFabHomeVisible, setIsFabHomeVisible] = useState(false);
   const [fabIsHovered, setFabIsHovered] = useState(false);
   const previousScrollPosition = useRef<number | null>(null);
   const hideMenuScrollPosition = useRef(0);
@@ -25,6 +26,11 @@ export const Header = () => {
         hideMenuScrollPosition.current = currentScrollPosition + 200;
       }
 
+      if (!isFabHomeVisible && currentScrollPosition >= 500) {
+        setIsFabHomeVisible(true);
+      } else if (isFabHomeVisible && currentScrollPosition < 500) {
+        setIsFabHomeVisible(false);
+      }
       if (!isMenuVisible || currentScrollPosition == 0) {
         if (currentScrollPosition <= showMenuScrollPosition.current) {
           setIsMenuVisible(true);
@@ -77,10 +83,23 @@ export const Header = () => {
       className={theme}
     >
       <Menu setFabVisible={setFabVisible} fabVisible={fabVisible} />
+      {isFabHomeVisible ? <Fab
+          onMouseEnter={() => setFabIsHovered(true)}
+          onMouseLeave={() => setFabIsHovered(false)}
+          title={"Accueil"}
+          icon={faHome}
+          id={"button-accueil"}
+          href={"#accueil"}
+          className={classNames("!fixed bottom-24 right-8 z-50", {
+            "opacity-0": !fabVisible,
+          })}
+          variant={"secondary"}
+          isExtended={isMenuVisible || fabIsHovered}
+      ></Fab> : null}
       <Fab
         onMouseEnter={() => setFabIsHovered(true)}
         onMouseLeave={() => setFabIsHovered(false)}
-        title={"Contacter Joël VIGREUX"}
+        title={"Contacter Rémi FAUCON"}
         icon={faCommentSmile}
         id={"button-contact"}
         href={"#contact"}
