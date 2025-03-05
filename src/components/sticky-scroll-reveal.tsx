@@ -7,9 +7,9 @@ const content: { text: React.ReactNode; media: React.ReactNode, theme?: string }
     {
         text: (
             <>
-                <h3 className="text-headline-small text-primary">Automatiser vos charges de travailles</h3>
-                <p className="lg:mt-6 mt-2 text-body-large">Avec des workflows adapter a vos besoins, automatiser vos
-                    charges de travailles superflues et concentrez-vous sur l'essentiel
+                <h3 className="text-headline-small text-primary">Automatisez vos charges de travail</h3>
+                <p className="lg:mt-6 mt-2 text-body-large">Avec des workflows adaptés à vos besoins,
+                    automatisez vos charges de travail superflues et concentrez vous sur l'essentiel
                 </p>
             </>),
         media: (
@@ -22,9 +22,9 @@ const content: { text: React.ReactNode; media: React.ReactNode, theme?: string }
     {
         text: (
             <>
-                <h3 className="text-headline-small text-primary">Spécialisez des models d'IA generative de text</h3>
-                <p className="lg:mt-6 mt-2 text-body-large">Grâce aux RAG de LLM, je conçois des
-                    chatbot spécialiser dans le ou les domaine(s) dont vous avez besoin.
+                <h3 className="text-headline-small text-primary">Spécialisez des modèles d'IA générative de textes</h3>
+                <p className="lg:mt-6 mt-2 text-body-large">Grâce aux RAG de LLM, je conçois des chatbot spécialisés
+                    dans le ou les domaine(s) dont vous avez besoin.
                 </p>
             </>),
         media: (
@@ -37,10 +37,10 @@ const content: { text: React.ReactNode; media: React.ReactNode, theme?: string }
     {
         text: (
             <>
-                <h3 className="text-headline-small text-primary">Documentez vos solutions grace à l'IA</h3>
-                <p className="lg:mt-6 mt-2 text-body-large">Permettez à vos clients ou à votre équipe de trouver
-                    les solutions possible pour des problèmes precis.
-                    Rendez votre documentation plus rapide et efficace pour vos utilisateur.
+                <h3 className="text-headline-small text-primary">Documentez vos solutions grâce à l'IA</h3>
+                <p className="lg:mt-6 mt-2 text-body-large">Permettez à vos clients ou à votre équipe de trouver les
+                    solutions possibles pour des problèmes précis. Rendez votre documentation plus rapide et
+                    efficace pour vos utilisateurs.
                 </p>
             </>),
         media: (
