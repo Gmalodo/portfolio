@@ -10,7 +10,7 @@ import compress from "astro-compress";
 
 // https://astro.build/config
 export default defineConfig({
-    site: "https://vigreux-joel.fr/",
+    site: "https://remi-faucon.fr/",
     compressHTML: true,
     experimental: {},
     output: 'static',
