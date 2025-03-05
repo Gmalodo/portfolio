@@ -1,6 +1,6 @@
 import { Button, Tab, Tabs } from "@udixio/ui";
 import React, { useEffect, useRef, useState } from "react";
-import classNames from "classnames";
+import { classNames } from "@udixio/ui";
 
 function formatLabel(id) {
   return id

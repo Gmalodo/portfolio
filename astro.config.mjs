@@ -13,7 +13,7 @@ export default defineConfig({
     site: "https://vigreux-joel.fr/",
     compressHTML: true,
     experimental: {},
-    output: 'hybrid',
+    output: 'static',
     integrations: [react(), tailwind({
         applyBaseStyles: false
     }), sitemap(), robotsTxt(), compress(), compressor(),],

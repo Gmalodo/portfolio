@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import useMouse, { type MousePosition } from "@react-hook/mouse-position";
-import classNames from "classnames";
+import { classNames } from "@udixio/ui";
 import { motion } from "framer-motion";
 
 export const CircleComponent: React.FC<{

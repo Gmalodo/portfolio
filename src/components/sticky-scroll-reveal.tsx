@@ -1,9 +1,24 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import classNames from "classnames";
+import { classNames } from "@udixio/ui";
 
 const content: { text: React.ReactNode; media: React.ReactNode, theme?: string }[] = [
+    {
+        text: (
+            <>
+                <h3 className="text-headline-small text-primary">Automatiser vos charges de travailles</h3>
+                <p className="lg:mt-6 mt-2 text-body-large">Avec des workflows adapter a vos besoins, automatiser vos
+                    charges de travailles superflues et concentrez-vous sur l'essentiel
+                </p>
+            </>),
+        media: (
+            <video className={"h-full w-full object-cover"} autoPlay loop muted>
+                <source src="/video/bot.mp4" type="video/mp4"/>
+                Sorry, your browser doesn't support embedded videos.
+            </video>
+        ),
+    },
     {
         text: (
             <>
@@ -30,29 +45,29 @@ const content: { text: React.ReactNode; media: React.ReactNode, theme?: string }
             </>),
         media: (
             <video className={"h-full w-full object-cover"} autoPlay loop muted>
-                <source src="/video/bot.mp4" type="video/mp4"/>
+                <source src="/video/rag.mp4" type="video/mp4"/>
                 Sorry, your browser doesn't support embedded videos.
             </video>
         ),
         theme: "purple"
     },
-    {
-        text: (
-            <>
-                <h3 className="text-headline-small text-primary">Devenez un expert dans le domaine de votre choix</h3>
-                <p className="lg:mt-6 mt-2 text-body-large">
-                    Augmentez les connaissances d'un model sur certains sujets pour vous instruire a ces propos.
-                    Devenez un professionnelle, ou développez votre savoir dans n'importe quelle discipline.
-                </p>
-            </>),
-        media: (
-            <video className={"h-full w-full object-cover"} autoPlay loop muted>
-                <source src="/video/rag.mp4" type="video/mp4"/>
-                Sorry, your browser doesn't support embedded videos.
-            </video>
-        ),
-        theme: "orange"
-    },
+    // {
+    //     text: (
+    //         <>
+    //             <h3 className="text-headline-small text-primary">Devenez un expert dans le domaine de votre choix</h3>
+    //             <p className="lg:mt-6 mt-2 text-body-large">
+    //                 Augmentez les connaissances d'un model sur certains sujets pour vous instruire a ces propos.
+    //                 Devenez un professionnelle, ou développez votre savoir dans n'importe quelle discipline.
+    //             </p>
+    //         </>),
+    //     media: (
+    //         <video className={"h-full w-full object-cover"} autoPlay loop muted>
+    //             <source src="/video/rag.mp4" type="video/mp4"/>
+    //             Sorry, your browser doesn't support embedded videos.
+    //         </video>
+    //     ),
+    //     theme: "orange"
+    // },
 ]
 
 export const StickyScroll = () => {

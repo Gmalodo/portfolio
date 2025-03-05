@@ -4,7 +4,7 @@ import Obfuscate from 'react-obfuscate';
 import {TextField} from "@udixio/ui";
 import {Image} from "astro:assets";
 import {StickyScroll} from "@components/sticky-scroll-reveal";
-import {Button, Diviser} from "@udixio/ui"
+import {Button, Divider} from "@udixio/ui"
 import {Line} from '@components/Line'
 import {LinearGradient} from "@components/LinearGradient";
 import {Techno} from "@components/Techno"
@@ -278,12 +278,12 @@ import {
                 </div>
                 <div class="sm:flex-2 w-full md:w-fit">
                     <div class="flex gap-4 items-center">
-                        <Diviser className="hidden md:block border-primary-container"/>
+                        <Divider className="hidden md:block border-primary-container"/>
                         <p class="text-title-medium text-on-primary-container">NoSQL</p>
-                        <Diviser className="hidden md:block border-primary-container"/>
+                        <Divider className="hidden md:block border-primary-container"/>
                     </div>
                     <div class="flex gap-4 mt-4">
-                        <Diviser orientation="vertical" className="md:hidden border-primary-container"/>
+                        <Divider orientation="vertical" className="md:hidden border-primary-container"/>
                         <div class="flex flex-1 flex-wrap gap-8">
                             <div data-aos="zoom-in" data-aos-delay={150}
                                  class="flex-1 platform bg-primary-container text-on-primary-container">
@@ -301,12 +301,12 @@ import {
                 </div>
                 <div class="flex-[3] w-full md:w-fit">
                     <div class="flex gap-4 items-center">
-                        <Diviser className="hidden md:block border-secondary-container"/>
+                        <Divider className="hidden md:block border-secondary-container"/>
                         <h4 class="text-title-medium text-on-secondary-container">SQL</h4>
-                        <Diviser className="hidden md:block border-secondary-container"/>
+                        <Divider className="hidden md:block border-secondary-container"/>
                     </div>
                     <div class="flex gap-4 mt-4">
-                        <Diviser orientation="vertical" className="md:hidden border-secondary-container"/>
+                        <Divider orientation="vertical" className="md:hidden border-secondary-container"/>
                         <div class="grid grid-cols-4 grid-rows-3 gap-8">
                             <div data-aos="zoom-in" data-aos-delay={300}
                                  class="platform bg-secondary-container text-on-secondary-container">
@@ -393,12 +393,12 @@ import {
                         </div>
                         <div class="sm:flex-2 w-full md:w-fit">
                             <div class="flex gap-4 items-center">
-                                <Diviser className="hidden md:block border-primary-container"/>
+                                <Divider className="hidden md:block border-primary-container"/>
                                 <p class="text-title-medium text-on-primary-container">Mobile</p>
-                                <Diviser className="hidden md:block border-primary-container"/>
+                                <Divider className="hidden md:block border-primary-container"/>
                             </div>
                             <div class="flex gap-4 mt-4">
-                                <Diviser orientation="vertical" className="md:hidden border-primary-container"/>
+                                <Divider orientation="vertical" className="md:hidden border-primary-container"/>
                                 <div class="flex flex-1 flex-wrap gap-8">
                                     <div data-aos="zoom-in" data-aos-delay={150}
                                          class="flex-1 platform bg-primary-container text-on-primary-container">
@@ -415,12 +415,12 @@ import {
                         </div>
                         <div class="flex-[3] w-full md:w-fit">
                             <div class="flex gap-4 items-center">
-                                <Diviser className="hidden md:block border-secondary-container"/>
+                                <Divider className="hidden md:block border-secondary-container"/>
                                 <p class="text-title-medium text-on-secondary-container">Desktop</p>
-                                <Diviser className="hidden md:block border-secondary-container"/>
+                                <Divider className="hidden md:block border-secondary-container"/>
                             </div>
                             <div class="flex gap-4 mt-4">
-                                <Diviser orientation="vertical" className="md:hidden border-secondary-container"/>
+                                <Divider orientation="vertical" className="md:hidden border-secondary-container"/>
                                 <div class="flex flex-1 flex-wrap gap-8">
                                     <div data-aos="zoom-in" data-aos-delay={300}
                                          class="flex-[100%] lg:flex-1 platform bg-secondary-container text-on-secondary-container">
@@ -577,7 +577,7 @@ Cordialement,
                             peux vous
                             accompagner
                             dans sa réalisation.</p>
-                        <FormContact client:visible/>
+                        <FormContact client:only="react"/>
                     </div>
                 </div>
             </div>
