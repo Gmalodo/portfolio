@@ -1,18 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Obfuscate from 'react-obfuscate';
-import {TextField} from "@udixio/ui";
 import {Image} from "astro:assets";
 import {StickyScroll} from "@components/sticky-scroll-reveal";
-import {Button, Divider} from "@udixio/ui"
+import {Button, Divider, Icon, Card} from "@udixio/ui"
 import {Line} from '@components/Line'
 import {LinearGradient} from "@components/LinearGradient";
 import {Techno} from "@components/Techno"
-import {Icon} from "@udixio/ui"
-import {Card} from "@udixio/ui"
 import {FormContact} from "@components/FormContact";
 import {BackgroundColor} from "@components/BackgroundColor";
-import {Link} from "@components/Link"
 import microserviceLogo from "@assets/images/microservice-logo.svg?raw"
 import databaseLogo from "@assets/images/database-logo.svg?raw"
 import nestLogo from "@assets/images/nest-logo.svg?raw"
@@ -35,23 +31,22 @@ import planetscaleLogo from "../assets/images/planetscale-logo.svg"
 import awsLogo from "@assets/images/aws-logo.svg?raw"
 import portrait from "@assets/images/portrait.jpg"
 import {
-    faAddressCard, faBrainCircuit, faChartNetwork,
+    faAddressCard, faBrainCircuit,
     faCircle, faCloud,
     faCode, faDatabase, faGears,
     faLaptopMobile, faMessageMiddle, faProjectDiagram, faVectorPolygon,
-    faComments, faDatabase, faFileVector, faGears,
-    faLaptopMobile, faMagic,
-    faMessageMiddle, faProjectDiagram, faVectorPolygon, faVectorSquare, faInfinity, faMonitorWaveform
+    faComments, faDatabase, faGears,
+    faLaptopMobile,
+    faMessageMiddle, faProjectDiagram, faVectorPolygon, faInfinity, faMonitorWaveform
 } from "@fortawesome/pro-light-svg-icons";
 import {faBrowser, faCircleInfo, faEnvelope} from "@fortawesome/pro-regular-svg-icons";
 import {
     faAndroid,
     faApple,
     faGolang,
-    faJava,
     faLinux,
-    faNodeJs, faPhp,
-    faPython, faSymfony,
+    faNodeJs,
+    faPython,
     faWindows
 } from "@fortawesome/free-brands-svg-icons";
 ---
@@ -472,7 +467,7 @@ import {
     </section>
     <div id="devOps" class="tab-menu theme-green">
         <section class="pt-24">
-            <div class="max-width">
+            <div class="max-width mt-24">
                 <div class="flex">
                     <div class="padding">
                         <h2 data-aos="fade-right" class="text-title-large text-center text-gradient">DevOps</h2>
